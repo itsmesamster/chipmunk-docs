@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://esrlabs.github.io/chipmunk-docs/sitemap.xml

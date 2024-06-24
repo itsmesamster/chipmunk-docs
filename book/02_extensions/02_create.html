@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>A quick start - documentation</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../01_usage/01_chapter.html"><strong aria-hidden="true">1.</strong> Usage</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../01_usage/searching_and_filtering.html"><strong aria-hidden="true">1.1.</strong> Searching and Filtering</a></li><li class="chapter-item expanded "><a href="../01_usage/bookmarks.html"><strong aria-hidden="true">1.2.</strong> Working with Bookmarks</a></li><li class="chapter-item expanded "><a href="../01_usage/commenting.html"><strong aria-hidden="true">1.3.</strong> Commenting</a></li><li class="chapter-item expanded "><a href="../01_usage/charts.html"><strong aria-hidden="true">1.4.</strong> Charts</a></li><li class="chapter-item expanded "><a href="../01_usage/concatenation.html"><strong aria-hidden="true">1.5.</strong> Concatenate Files</a></li><li class="chapter-item expanded "><a href="../01_usage/merging.html"><strong aria-hidden="true">1.6.</strong> Merging Files</a></li><li class="chapter-item expanded "><a href="../01_usage/time_range.html"><strong aria-hidden="true">1.7.</strong> Time Range</a></li><li class="chapter-item expanded "><a href="../01_usage/dlt.html"><strong aria-hidden="true">1.8.</strong> DLT support</a></li><li class="chapter-item expanded "><a href="../01_usage/keyboard_shortcuts.html"><strong aria-hidden="true">1.9.</strong> Keyboard Shortcuts</a></li><li class="chapter-item expanded "><a href="../01_usage/command_line.html"><strong aria-hidden="true">1.10.</strong> Command line</a></li></ol></li><li class="chapter-item expanded "><a href="../02_extensions/01_about.html"><strong aria-hidden="true">2.</strong> Developing Plugins</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02_extensions/02_create.html" class="active"><strong aria-hidden="true">2.1.</strong> A quick start</a></li><li class="chapter-item expanded "><a href="../02_extensions/03_defaults.html"><strong aria-hidden="true">2.2.</strong> Default plugins</a></li><li class="chapter-item expanded "><a href="../02_extensions/04_api.html"><strong aria-hidden="true">2.3.</strong> Plugin API</a></li></ol></li><li class="chapter-item expanded "><a href="../03_contributing/01_chapter.html"><strong aria-hidden="true">3.</strong> Contributing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03_contributing/developer_docs.html"><strong aria-hidden="true">3.1.</strong> Native Development</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" type="text/css" href="../styles/styles.extension.css">
+<h1 id="create-a-plugin"><a class="header" href="#create-a-plugin">Create a plugin</a></h1>
+<p>This section provides a step by step guide on how to get <strong>Chipmunk</strong> and the <strong>Quickstart</strong> repository as well as how to build them.
+The repository <strong>Quickstart</strong> provides a variety of plugins which can be copied and modifed to create new plugins.</p>
+<h2 id="installation-of-plugins-and-chipmunk"><a class="header" href="#installation-of-plugins-and-chipmunk">Installation of plugins and Chipmunk</a></h2>
+<p>First off clone the create a folder for <strong>Chipmunk</strong> and <strong>Quickstart</strong> by typing the following commands:</p>
+<pre><code>mkdir chipmunk-developing
+cd chipmunk-developing
+</code></pre>
+<p>After creating the folder, clone both the <strong>Chipmunk</strong> and the <strong>Quickstart</strong> repository into the folder and navigate into it.</p>
+<pre><code>git clone https://github.com/esrlabs/chipmunk.git
+git clone https://github.com/esrlabs/chipmunk-quickstart.git
+cd chipmunk-quickstart
+</code></pre>
+<p>The <strong>Quickstart</strong> repository has a few examples of plugins which are located in the folder <code>plugin</code>:</p>
+<pre><code>&#9492;&#9472;&#9472; plugins
+    &#9500;&#9472;&#9472; plugin.helloworld
+    &#9500;&#9472;&#9472; plugin.row.columns
+    &#9500;&#9472;&#9472; plugin.row.parser
+    &#9500;&#9472;&#9472; plugin.selection.parser
+    &#9492;&#9472;&#9472; plugin.sh
+</code></pre>
+<p>To build the plugin, type the following command with the path to the target plugin:</p>
+<pre><code>rake build[./plugins/plugin.helloworld]</code></pre>
+<p>Optionally you can define a version of your plugin:</p>
+<pre><code>rake build[./plugins/plugin.helloworld, 1.0.1]</code></pre>
+<blockquote>
+<p><strong>WINDOWS</strong> Note: To call a rake task with multiple arguments, it could be command should be wrapped as string <code>rake 'build[./plugins/plugin.helloworld, 1.0.1]'</code></p>
+</blockquote>
+<blockquote>
+<p>Note: The very first build always takes some noticeable time because of build script downloads and compiles necessary infrastructure.</p>
+</blockquote>
+<p>As a result the folder <code>releases</code> will be created with the compiled plugin:</p>
+<pre><code>&#9500;&#9472;&#9472; plugins
+&#9474    &#9500;&#9472;&#9472; plugin.helloworld
+&#9474    &#9500;&#9472;&#9472; plugin.row.columns
+&#9474    &#9500;&#9472;&#9472; plugin.row.parser
+&#9474    &#9500;&#9472;&#9472; plugin.selection.parser
+&#9474    &#9492;&#9472;&#9472; plugin.sh
+&#9492;&#9472;&#9472; releases
+     &#9492;&#9472;&#9472; plugin.helloworld
+</code></pre>
+<p>To build <strong>Chipmunk</strong> run the following commands to navigate into the folder where the repository was copied:</p>
+<pre><code>rake full_pipeline</code></pre>
+<p>The building of <strong>Chipmunk</strong> will take some time but only needs to be built once. After the build is finished <strong>Chipmunk</strong> can be executed from the <code>releases</code> folder.</p>
+<p>Before starting <strong>Chipmunk</strong> some environment variables need to be passed in as a preparation.</p>
+<p>First off define a full path to the folder that will hold the release of your plugin.</p>
+<p><code><pre>export CHIPMUNK_PLUGINS_SANDBOX=../chipmunk-quickstart/releases</pre></code></p>
+<p>By default <strong>Chipmunk</strong> stores plugins the home folder in <code>.chipmunk/plugins</code> but by running the command above it can be modified.</p>
+<p>To prevent the installation of default plugins, run the following command</p>
+<pre><code>export CHIPMUNK_PLUGINS_NO_DEFAULTS=true</code></pre>
+<p>If your has plugin already been published in the <strong>Chipmunk Store</strong> these commands would prevent it from updating:</p>
+<pre><code>export CHIPMUNK_PLUGINS_NO_UPGRADE=true
+export CHIPMUNK_PLUGINS_NO_UPDATES=true
+</code></pre>
+<p>To enable logs in the Console making it easier to debug:</p>
+<pre><code>export CHIPMUNK_DEV_LOGLEVEL=ENV</code></pre>
+<p>Now <strong>Chipmunk</strong> is ready to be executed.</p>
+<h2 id="rake-commands"><a class="header" href="#rake-commands">Rake commands</a></h2>
+<p>The following Rake commands are vital for the compilation of <strong>Chipmunk</strong>, which is why in this section the most important rake commands are going to be mentioned and described.</p>
+<pre><code>rake start                                          # Start Chipmunk
+rake full_pipeline                                  # Build Chipmunk (whole application)
+rake build[./plugins/plugin.helloworld]             # Build plugin
+rake build[./plugins/plugin.helloworld, 1.0.1]      # Build plugin with version
+rake 'build[./plugins/plugin.helloworld, 1.0.1]'    # Build plugin with version (Windows) 
+</code></pre>
+<p>If a new update of <strong>Chipmunk</strong> is available, first run <code>rake clobber</code> (to remove all compiled files) and then <code>rake full_pipeline</code> to update and re-build <strong>Chipmunk</strong>.</p>
+<p>The next section gives a thorough explanation of the default plugins provided by <strong>Quickstart</strong></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../02_extensions/01_about.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../02_extensions/03_defaults.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../02_extensions/01_about.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../02_extensions/03_defaults.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
