@@ -1,1 +1,65 @@
-{"Stream - startup measurement":[{"release":"3.12.2","actual_value":61.51835433333333},{"release":"3.12.3","actual_value":61.28187516666667},{"release":"3.12.4","actual_value":62.61016},{"release":"3.12.5","actual_value":69.65449983333333},{"release":"3.12.6","actual_value":63.12799316666667},{"release":"3.12.7","actual_value":62.69998583333333},{"release":"3.12.8","actual_value":4.72975},{"release":"3.12.9","actual_value":6.279576333333334},{"release":"3.15.0","actual_value":4.412153},{"release":"3.15.1","actual_value":4.159055833333333},{"release":"3.15.2","actual_value":4.425764},{"release":"3.15.3","actual_value":5.842639166666667}],"Stream - shutdown measurement":[{"release":"3.12.2","actual_value":54.30257633333333},{"release":"3.12.3","actual_value":56.35384716666667},{"release":"3.12.4","actual_value":55.4993335},{"release":"3.12.5","actual_value":61.9329375},{"release":"3.12.6","actual_value":54.905222333333334},{"release":"3.12.7","actual_value":53.76180566666667},{"release":"3.12.8","actual_value":2.7039376666666666},{"release":"3.12.9","actual_value":3.4430413333333334},{"release":"3.15.0","actual_value":2.100166833333333},{"release":"3.15.1","actual_value":2.061278},{"release":"3.15.2","actual_value":5.140034666666667},{"release":"3.15.3","actual_value":3.226277666666667}],"Stream - Open 50 sessions":[{"release":"3.12.2","actual_value":2470.365659833333},{"release":"3.12.3","actual_value":2568.9628125},{"release":"3.12.4","actual_value":2681.3183263333335},{"release":"3.12.5","actual_value":2637.6346248333334},{"release":"3.12.6","actual_value":2517.4247986666664},{"release":"3.12.7","actual_value":2521.534874833333},{"release":"3.12.8","actual_value":514.0800558333334},{"release":"3.12.9","actual_value":453.1250555},{"release":"3.15.0","actual_value":546.2444095},{"release":"3.15.1","actual_value":533.0657431666667},{"release":"3.15.2","actual_value":520.789632},{"release":"3.15.3","actual_value":538.2667428333333}],"Indexes - Switch to breadcrumb mode":[{"release":"3.12.2","actual_value":207.26007633333333},{"release":"3.12.3","actual_value":205.09750683333334},{"release":"3.12.4","actual_value":205.7547915},{"release":"3.12.5","actual_value":211.90517366666666},{"release":"3.12.6","actual_value":207.2043055},{"release":"3.12.7","actual_value":207.50554866666667},{"release":"3.12.8","actual_value":209.04696533333333},{"release":"3.12.9","actual_value":202.88280566666666},{"release":"3.15.0","actual_value":200.0523405},{"release":"3.15.1","actual_value":201.87506266666665},{"release":"3.15.2","actual_value":203.60357666666667},{"release":"3.15.3","actual_value":206.09274283333332}],"Assign & single search":[{"release":"3.12.2","actual_value":3.0378195},{"release":"3.12.3","actual_value":3.206992833333333},{"release":"3.12.4","actual_value":3.4810345},{"release":"3.12.5","actual_value":3.555347},{"release":"3.12.6","actual_value":3.6131808333333333},{"release":"3.12.7","actual_value":3.4715698333333336},{"release":"3.12.8","actual_value":190.29286100000002},{"release":"3.12.9","actual_value":183.85180549999998},{"release":"3.15.0","actual_value":182.811583},{"release":"3.15.1","actual_value":183.54912533333334},{"release":"3.15.2","actual_value":187.71320133333333},{"release":"3.15.3","actual_value":184.90835433333334}],"Assign & multiple search":[{"release":"3.12.2","actual_value":2.8965278333333333},{"release":"3.12.3","actual_value":3.294222},{"release":"3.12.4","actual_value":3.6259585},{"release":"3.12.5","actual_value":3.6240140000000003},{"release":"3.12.6","actual_value":3.9151461666666667},{"release":"3.12.7","actual_value":3.486903},{"release":"3.12.8","actual_value":191.248639},{"release":"3.12.9","actual_value":185.04931933333333},{"release":"3.15.0","actual_value":182.23286099999999},{"release":"3.15.1","actual_value":185.09192366666664},{"release":"3.15.2","actual_value":186.72388883333335},{"release":"3.15.3","actual_value":185.630986}],"Observe - grab content (text)":[{"release":"3.12.2","actual_value":87.06799283333334},{"release":"3.12.3","actual_value":86.50977783333333},{"release":"3.12.4","actual_value":87.02128483333333},{"release":"3.12.5","actual_value":87.6100485},{"release":"3.12.6","actual_value":86.917229},{"release":"3.12.7","actual_value":88.11436816666667},{"release":"3.12.8","actual_value":88.32194450000001},{"release":"3.12.9","actual_value":87.59083349999999},{"release":"3.15.0","actual_value":84.028375},{"release":"3.15.1","actual_value":85.21018766666667},{"release":"3.15.2","actual_value":85.73043050000001},{"release":"3.15.3","actual_value":87.150243}],"Observe - grab content (pcapng)":[{"release":"3.12.2","actual_value":8704.251541833333},{"release":"3.12.3","actual_value":8863.632187666668},{"release":"3.12.4","actual_value":8821.120743166666},{"release":"3.12.5","actual_value":8812.634048666667},{"release":"3.12.6","actual_value":8707.388770833333},{"release":"3.12.7","actual_value":8719.412326166666},{"release":"3.12.8","actual_value":7.171687333333334},{"release":"3.12.9","actual_value":7.1559859999999995},{"release":"3.15.0","actual_value":3.807020666666667},{"release":"3.15.1","actual_value":4.15775},{"release":"3.15.2","actual_value":4.4147430000000005},{"release":"3.15.3","actual_value":8.9354655}],"Observe - grab content (dlt)":[{"release":"3.12.2","actual_value":4.887743166666667},{"release":"3.12.3","actual_value":4.707916833333333},{"release":"3.12.4","actual_value":4.250854},{"release":"3.12.5","actual_value":6.206861},{"release":"3.12.6","actual_value":4.430902833333334},{"release":"3.12.7","actual_value":5.3339375},{"release":"3.12.8","actual_value":8815.4055345},{"release":"3.12.9","actual_value":8726.224791666666},{"release":"3.15.0","actual_value":8987.5095485},{"release":"3.15.1","actual_value":9035.094847166667},{"release":"3.15.2","actual_value":8989.695485999999},{"release":"3.15.3","actual_value":9104.274833333333}],"calculate_scaled_map":[{"release":"3.14.3","actual_value":3.5667}]}
+{
+  "Stream - startup measurement": [
+    {"release": "3.14.4", "actual_value": 5.515333},
+    {"release": "3.15.0", "actual_value": 4.56525},
+    {"release": "3.15.1", "actual_value": 5.493305333333333},
+    {"release": "3.15.2", "actual_value": 4.8735135},
+    {"release": "3.15.3", "actual_value": 4.548145833333334}
+  ],
+  "Stream - shutdown measurement": [
+    {"release": "3.14.4", "actual_value": 3.0939791666666667},
+    {"release": "3.15.0", "actual_value": 3.2600555},
+    {"release": "3.15.1", "actual_value": 3.649493},
+    {"release": "3.15.2", "actual_value": 2.528423666666667},
+    {"release": "3.15.3", "actual_value": 2.9940346666666664}
+  ],
+  "Stream - Open 50 sessions": [
+    {"release": "3.14.4", "actual_value": 566.0496805},
+    {"release": "3.15.0", "actual_value": 566.3158058333333},
+    {"release": "3.15.1", "actual_value": 925.3093816666666},
+    {"release": "3.15.2", "actual_value": 543.9941528333334},
+    {"release": "3.15.3", "actual_value": 662.9163543333333}
+  ],
+  "Indexes - Switch to breadcrumb mode": [
+    {"release": "3.14.4", "actual_value": 203.2677015},
+    {"release": "3.15.0", "actual_value": 185.40145116666667},
+    {"release": "3.15.1", "actual_value": 236.0819375},
+    {"release": "3.15.2", "actual_value": 201.71834033333334},
+    {"release": "3.15.3", "actual_value": 215.0506946666667}
+  ],
+  "Assign & single search": [
+    {"release": "3.14.4", "actual_value": 185.39147916666664},
+    {"release": "3.15.0", "actual_value": 183.15879166666664},
+    {"release": "3.15.1", "actual_value": 212.53715250000002},
+    {"release": "3.15.2", "actual_value": 183.76638200000002},
+    {"release": "3.15.3", "actual_value": 194.79124316666665}
+  ],
+  "Assign & multiple search": [
+    {"release": "3.14.4", "actual_value": 189.8748958333333},
+    {"release": "3.15.0", "actual_value": 182.0035},
+    {"release": "3.15.1", "actual_value": 255.38897233333333},
+    {"release": "3.15.2", "actual_value": 184.13644466666668},
+    {"release": "3.15.3", "actual_value": 195.3441528333333}
+  ],
+  "Observe - grab content (text)": [
+    {"release": "3.14.4", "actual_value": 86.3348265},
+    {"release": "3.15.0", "actual_value": 81.58732616666667},
+    {"release": "3.15.1", "actual_value": 91.32300033333333},
+    {"release": "3.15.2", "actual_value": 84.5164655},
+    {"release": "3.15.3", "actual_value": 91.66142366666666}
+  ],
+  "Observe - grab content (pcapng)": [
+    {"release": "3.14.4", "actual_value": 4.256666666666667},
+    {"release": "3.15.0", "actual_value": 5.579229000000001},
+    {"release": "3.15.1", "actual_value": 5.052597333333334},
+    {"release": "3.15.2", "actual_value": 3.8311665},
+    {"release": "3.15.3", "actual_value": 11.317638833333334}
+  ],
+  "Observe - grab content (dlt)": [
+    {"release": "3.14.4", "actual_value": 8904.821965166666},
+    {"release": "3.15.0", "actual_value": 9208.050291666666},
+    {"release": "3.15.1", "actual_value": 13099.245896166665},
+    {"release": "3.15.2", "actual_value": 9174.7438545},
+    {"release": "3.15.3", "actual_value": 9732.617472166667}
+  ]
+}
